@@ -1,0 +1,54 @@
+1)
+Characters in Shapes
+Create a function that counts how many characters make up a rectangular shape. You will be given a list of strings.
+cozum
+def count_characters(lst):
+  return sum(len(i) for i in lst)
+
+def count_characters(lst):
+	return len(''.join(lst))
+
+def count_characters(lst):
+  return 0 if not lst else len(lst[0]) * len(lst)
+
+def count_characters(lst):
+	if not lst:
+		return 0
+	return len(lst[0]) * len(lst)
+
+2)
+The challenge is to fix all of the bugs in this incredibly messy code, which the code in the image might've actually looked like (probably not)! The code given will output the same middle two lines as in the image shown above.
+
+First parameter is the user's score.
+Second parameter is the required score.
+
+grade_percentage("85%", "85%") ➞ "You PASSED the Exam"
+
+grade_percentage("99%", "85%") ➞ "You PASSED the Exam"
+
+grade_percentage("65%", "90%") ➞ "You FAILED the Exam"
+
+
+def grade_percentage(user_score, pass_score):
+  return 'You {} the Exam'.format('PASSED' if user_score >= pass_score else 'FAILED')
+
+def grade_percentage(user, req):
+	s = 'FAILED' if int(user[:-1]) < int(req[:-1]) else 'PASSED'
+	return 'You {} the Exam'.format(s)
+
+grade_percentage=lambda u,p:'You '+'PFAASISL'[u<p::2]+'ED the Exam'
+
+def grade_percentage(user_score, pass_score):
+  if int(user_score[:-1]) < int(pass_score[:-1]):
+    s='FAILED'
+  else:
+    s='PASSED'
+  return 'You {} the Exam'.format(s)
+
+def grade_percentage(user_score, pass_score):
+	s=''
+	if int(user_score[:-1])<int(pass_score[:-1]) :
+		s=s+'FAILED'
+	if int(user_score[:-1])>=int(pass_score[:-1]) :
+		s=s+'PASSED'
+	return 'You'+' '+s+' '+'the Exam'
